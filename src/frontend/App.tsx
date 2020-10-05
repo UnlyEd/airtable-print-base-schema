@@ -7,6 +7,7 @@ import React from 'react';
 import TextareaAutosize from 'react-autosize-textarea';
 import { renderToString } from 'react-dom/server';
 import Turndown from 'turndown';
+import Separator from './Separator';
 
 const BaseStructure = () => {
   // useBase will re-render the block whenever the base's configuration changes: this includes
@@ -27,8 +28,7 @@ const BaseStructure = () => {
         </ul>
       </div>
 
-      <br />
-      <br />
+      <Separator />
 
       <div>
         <h2>Tables details</h2>
@@ -91,9 +91,7 @@ const BaseStructure = () => {
                 }
 
                 {/* Put some space between each table */}
-                <hr />
-                <br />
-                <br />
+                <Separator />
               </div>
             );
           })
