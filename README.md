@@ -41,7 +41,7 @@ TODO
 
 # CHANGELOG
 
-TODO
+`alpha.0` (2020-10-06): Can be used in your own bases, might break under some untested conditions, feel free to open a PR or an issue if so.
 
 ---
 
@@ -53,7 +53,7 @@ TODO
 
 # Roadmap
 
-TODO
+Will be used in alpha version for some time (internally at Unly) until it gets improved and maybe eventually released as an official Airtable App.
 
 ---
 
