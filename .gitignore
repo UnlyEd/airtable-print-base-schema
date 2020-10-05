@@ -122,3 +122,7 @@ yarn-error.log*
 
 # Airtable
 /.airtableblocksrc.json
+
+# Ignore secondary remotes from being tracked by git, to allow the configuration of many remotes without pushing those files
+.block/*.json
+!.block/remote.json
