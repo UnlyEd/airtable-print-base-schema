@@ -1,7 +1,10 @@
 {
   "scripts": {
     "start": "block run",
+    "start:remote": "block run --remote",
     "deploy": "block release",
+    "deploy:remote": "block release --remote",
+    "list:remotes": "block list-remotes",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src"
   },
   "dependencies": {
