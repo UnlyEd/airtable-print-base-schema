@@ -1,6 +1,7 @@
 {
   "scripts": {
     "start": "block run",
+    "deploy": "block release",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src"
   },
   "dependencies": {
