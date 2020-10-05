@@ -1,5 +1,7 @@
 <a href="https://unly.org"><img src="https://storage.googleapis.com/unly/images/ICON_UNLY.png" align="right" height="20" alt="Unly logo" title="Unly logo" /></a>
 
+> # Warning: This is a work-in-progress app, it's not stable yet.
+
 Airtable App - Bases compare
 ===
 
@@ -19,7 +21,9 @@ Common use cases are:
 
 # Documentation
 
-TODO
+![image](https://user-images.githubusercontent.com/3807458/95138868-8a698b80-076b-11eb-88a2-16d3c17d38dc.png)
+
+Using the output given by the app within a diffing tool such as [diffchecker](https://www.diffchecker.com/diff) will help you locate the Schema differences between 2 different bases.
 
 ---
 
