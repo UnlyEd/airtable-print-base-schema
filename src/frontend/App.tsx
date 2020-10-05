@@ -7,6 +7,7 @@ import React from 'react';
 import TextareaAutosize from 'react-autosize-textarea';
 import { renderToString } from 'react-dom/server';
 import Turndown from 'turndown';
+import AirtableFieldOptions from './FieldOptions';
 import Separator from './Separator';
 
 const BaseStructure = () => {
@@ -79,7 +80,7 @@ const BaseStructure = () => {
                             }
                             {
                               field.options && (
-                                <li>Options: {JSON.stringify(field.options, null, 2)}</li>
+                                <AirtableFieldOptions base={base} options={field.options} />
                               )
                             }
                             {/*<p>Available aggregators: {JSON.stringify(field.availableAggregators, null, 2)}</p>*/}
