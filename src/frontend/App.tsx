@@ -2,23 +2,20 @@ import Table from '@airtable/blocks/dist/types/src/models/table';
 import { useBase } from '@airtable/blocks/ui';
 import map from 'lodash.map';
 import React from 'react';
-import { toMarkdown } from '../utils/base';
+import TextareaAutosize from 'react-autosize-textarea';
+import { renderToString } from 'react-dom/server';
+import Turndown from 'turndown';
 
-const App = () => {
-
+const Xxx = () => {
   // useBase will re-render the block whenever the base's configuration changes: this includes
   // updates to names, descriptions and field options, as well as tables/fields being added or
   // removed. This means the block will always show the latest structure.
   const base = useBase();
   const tables = base.tables;
-  console.log('base', base);
-  base.tables;
 
   return (
     <div>
       <h1>Bases compare</h1>
-
-      {toMarkdown(base)}
 
       <div>
         <h2>Tables overview</h2>
@@ -41,6 +38,25 @@ const App = () => {
         }
       </div>
     </div>
+  );
+};
+
+const App = () => {
+  const turndown = new Turndown({
+    headingStyle: 'atx',
+  });
+
+  return (
+    <TextareaAutosize
+      readOnly
+      style={{
+        overflow: 'auto',
+        width: '100%',
+        border: 'none',
+      }}
+    >
+      {turndown.turndown(renderToString(<Xxx />))}
+    </TextareaAutosize>
   );
 };
 
