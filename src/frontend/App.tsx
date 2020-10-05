@@ -1,4 +1,6 @@
+import Field from '@airtable/blocks/dist/types/src/models/field';
 import Table from '@airtable/blocks/dist/types/src/models/table';
+import View from '@airtable/blocks/dist/types/src/models/view';
 import { useBase } from '@airtable/blocks/ui';
 import map from 'lodash.map';
 import React from 'react';
@@ -6,7 +8,7 @@ import TextareaAutosize from 'react-autosize-textarea';
 import { renderToString } from 'react-dom/server';
 import Turndown from 'turndown';
 
-const Xxx = () => {
+const BaseStructure = () => {
   // useBase will re-render the block whenever the base's configuration changes: this includes
   // updates to names, descriptions and field options, as well as tables/fields being added or
   // removed. This means the block will always show the latest structure.
@@ -20,8 +22,13 @@ const Xxx = () => {
       <div>
         <h2>Tables overview</h2>
 
-        <p>Amount: {tables.length}</p>
+        <ul>
+          <li>Count: {tables.length}</li>
+        </ul>
       </div>
+
+      <br />
+      <br />
 
       <div>
         <h2>Tables details</h2>
@@ -29,9 +36,64 @@ const Xxx = () => {
           map(tables, (table: Table) => {
             return (
               <div>
-                <h3>{table.name}</h3>
+                <h3>Table: <b>{table.name}</b></h3>
+                <ul>
+                  <li>{table.description}</li>
+                  <li>Fields count: {table.fields.length}</li>
+                  <li>Views count: {table.views.length}</li>
+                </ul>
 
-                <p>{table.description}</p>
+                {
+                  table.views.length && (
+                    <div>
+                      <h4>Views details</h4>
+                    </div>
+                  )
+                }
+                {
+                  map(table.views, (view: View) => {
+                    return (
+                      <ul>
+                        <li>View: <b>{view.name}</b></li>
+                        <li>Type: {view.type}</li>
+                      </ul>
+                    );
+                  })
+                }
+
+                <div>
+                  <h4>Fields details</h4>
+                </div>
+                {
+                  map(table.fields, (field: Field) => {
+                    return (
+                      <ul>
+                        <li>Field: <b>{field.name}{field.isPrimaryField ? ' (Primary)' : ''}{field.isComputed ? ' (Computed)' : ''}</b></li>
+                        <li>
+                          <ul>
+                            <li>Type: {field.type}</li>
+                            {
+                              field.description && (
+                                <li>Description: {field.description}</li>
+                              )
+                            }
+                            {
+                              field.options && (
+                                <li>Options: {JSON.stringify(field.options, null, 2)}</li>
+                              )
+                            }
+                            {/*<p>Available aggregators: {JSON.stringify(field.availableAggregators, null, 2)}</p>*/}
+                          </ul>
+                        </li>
+                      </ul>
+                    );
+                  })
+                }
+
+                {/* Put some space between each table */}
+                <hr />
+                <br />
+                <br />
               </div>
             );
           })
@@ -55,7 +117,7 @@ const App = () => {
         border: 'none',
       }}
     >
-      {turndown.turndown(renderToString(<Xxx />))}
+      {turndown.turndown(renderToString(<BaseStructure />))}
     </TextareaAutosize>
   );
 };
