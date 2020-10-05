@@ -1,14 +1,16 @@
 {
   "scripts": {
     "start": "block run",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx frontend"
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx src"
   },
   "dependencies": {
     "@airtable/blocks": "1.1.0",
+    "lodash.map": "4.6.0",
     "react": "16.9.0",
     "react-dom": "16.9.0"
   },
   "devDependencies": {
+    "@types/lodash.map": "4.6.13",
     "@typescript-eslint/eslint-plugin": "3.0.2",
     "@typescript-eslint/parser": "2.15.0",
     "eslint": "6.3.0",
