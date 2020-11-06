@@ -18,7 +18,14 @@ Common use cases are:
 
 # Documentation
 
+![image](https://user-images.githubusercontent.com/3807458/98378099-e151d180-2045-11eb-9a3b-712329e5da6a.png)
+> Custom app displays on the right
+
+![image](https://user-images.githubusercontent.com/3807458/98378109-e3b42b80-2045-11eb-9de5-70a2dbec86b0.png)
+> Full screen
+
 ![image](https://user-images.githubusercontent.com/3807458/95138868-8a698b80-076b-11eb-88a2-16d3c17d38dc.png)
+> Using [diffchecker](https://www.diffchecker.com/diff) to compare 2 bases
 
 Using the output given by the app within a diffing tool such as [diffchecker](https://www.diffchecker.com/diff) will help you locate the Schema differences between 2 different bases.
 
