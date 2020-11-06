@@ -7,6 +7,7 @@
     "deploy": "block release",
     "deploy:remote": "block release --remote",
     "list:remotes": "block list-remotes",
+    "submit": "block submit",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src"
   },
   "dependencies": {
