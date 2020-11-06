@@ -1,7 +1,5 @@
 <a href="https://unly.org"><img src="https://storage.googleapis.com/unly/images/ICON_UNLY.png" align="right" height="20" alt="Unly logo" title="Unly logo" /></a>
 
-> # Warning: This is a work-in-progress app, it's not stable yet.
-
 Airtable App - Print base schema
 ===
 
