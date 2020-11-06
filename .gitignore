@@ -126,3 +126,6 @@ yarn-error.log*
 # Ignore secondary remotes from being tracked by git, to allow the configuration of many remotes without pushing those files
 .block/*.json
 !.block/remote.json
+
+# Don't use yarn with airtable apps (not compatible, gotta use npm)
+yarn.lock
