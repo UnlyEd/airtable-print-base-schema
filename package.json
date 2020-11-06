@@ -1,6 +1,6 @@
 {
-  "name": "airtable-app-bases-compare",
-  "version": "1.0.0-alpha.0",
+  "name": "airtable-print-base-schema",
+  "version": "1.0.0",
   "scripts": {
     "start": "block run",
     "start:remote": "block run --remote",

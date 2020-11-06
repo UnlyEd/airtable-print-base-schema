@@ -2,20 +2,19 @@
 
 > # Warning: This is a work-in-progress app, it's not stable yet.
 
-Airtable App - Bases compare
+Airtable App - Print base schema
 ===
 
-The goal of this app is to compare multiple Airtable bases together to detect differences between structure or configuration.
+The goal of this app is to print the schema of one Airtable base.
+**Combined with a text diff tool**, it can be used to detect differences between two versions of the same base, or different bases.
 
-For instance, it can be used to detect whether a base has a table that another base doesn't have.
+> For instance, it can be used to detect whether a base has a table that another base doesn't have.
 
 It is very useful if you run similar bases that should eventually be sync with one another, in order to know what's not identical.
 
 Common use cases are:
 - staging/production bases where staging is ahead of production (but eventually gets caught)
 - SaaS where each customer has its own base
-
-> The ultimate goal would be to compare an unlimited amount of bases together, but the v1 will try to make it work for comparing 2 bases for starters.
 
 ---
 
@@ -29,31 +28,41 @@ Using the output given by the app within a diffing tool such as [diffchecker](ht
 
 # Quick start
 
-TODO
+[Follow the official tutorial to install an open-source Airtable app from GitHub into your own Airtable base](https://airtable.com/developers/apps/guides/remix-from-github)
+
+Additional resources:
+- [https://support.airtable.com/hc/en-us/articles/360042807073-Adding-an-app-to-a-base](https://support.airtable.com/hc/en-us/articles/360042807073-Adding-an-app-to-a-base)
+
 
 ---
 
 # FAQ
 
-TODO
+## 1. Is it Free?
+Yes, install it yourself and use it in your bases.
+
+## 1. Can I resell this?
+No, code source is under GNU-GPL. 
+You can change it for yourself but cannot package it to resell it to other people.
 
 ---
 
 # CHANGELOG
 
-`alpha.0` (2020-10-06): Can be used in your own bases, might break under some untested conditions, feel free to open a PR or an issue if so.
+- `1.0.0` (2020-11-06): No difference with alpha-0, was released as official version after 1 month of internal use at Unly.
+- `1.0.0-alpha.0` (2020-10-06): Can be used in your own bases, might break under some untested conditions, feel free to open a PR or an issue if so.
 
 ---
 
 # Contributing
 
-TODO
+Feel free to open an issue if you wish to contribute.
 
 ---
 
 # Roadmap
 
-Will be used in alpha version for some time (internally at Unly) until it gets improved and maybe eventually released as an official Airtable App.
+No big change planned. Project is maintained and bug fix that are reported will be looked into.
 
 ---
 
