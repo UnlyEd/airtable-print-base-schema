@@ -1,7 +1,8 @@
+import { base } from '@airtable/blocks';
 import Field from '@airtable/blocks/dist/types/src/models/field';
 import Table from '@airtable/blocks/dist/types/src/models/table';
 import View from '@airtable/blocks/dist/types/src/models/view';
-import { useBase } from '@airtable/blocks/ui';
+import { useWatchable } from '@airtable/blocks/ui';
 import map from 'lodash.map';
 import React from 'react';
 import TextareaAutosize from 'react-autosize-textarea';
@@ -11,11 +12,13 @@ import AirtableFieldOptions from './FieldOptions';
 import Separator from './Separator';
 
 const BaseStructure = () => {
-  // useBase will re-render the block whenever the base's configuration changes: this includes
-  // updates to names, descriptions and field options, as well as tables/fields being added or
-  // removed. This means the block will always show the latest structure.
-  const base = useBase();
+  console.log('base', base);
   const tables = base.tables;
+
+  useWatchable(base, ['schema'], () => {
+    console.log('base', base); // TODO Doesn't log anything when base is changed
+    // setParsedBase(parseSchema(newBase))
+  });
 
   return (
     <div>
