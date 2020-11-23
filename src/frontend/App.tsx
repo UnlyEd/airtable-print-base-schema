@@ -36,7 +36,7 @@ const BaseStructure = () => {
         {
           map(tables, (table: Table) => {
             return (
-              <div>
+              <div key={table.name}>
                 <h3>Table: <b>{table.name}</b></h3>
                 <ul>
                   <li>{table.description}</li>
@@ -54,7 +54,7 @@ const BaseStructure = () => {
                 {
                   map(table.views, (view: View) => {
                     return (
-                      <ul>
+                      <ul key={view.name}>
                         <li>View: <b>{view.name}</b></li>
                         <li>Type: {view.type}</li>
                       </ul>
@@ -68,7 +68,7 @@ const BaseStructure = () => {
                 {
                   map(table.fields, (field: Field) => {
                     return (
-                      <ul>
+                      <ul key={field.name}>
                         <li>Field: <b>{field.name}{field.isPrimaryField ? ' (Primary)' : ''}{field.isComputed ? ' (Computed)' : ''}</b></li>
                         <li>
                           <ul>
@@ -118,9 +118,8 @@ const App = () => {
         minWidth: '100%',
         maxWidth: '100%',
       }}
-    >
-      {turndown.turndown(renderToString(<BaseStructure />))}
-    </TextareaAutosize>
+      value={turndown.turndown(renderToString(<BaseStructure />))}
+    />
   );
 };
 

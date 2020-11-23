@@ -3,7 +3,7 @@ import Field from '@airtable/blocks/dist/types/src/models/field';
 import Table from '@airtable/blocks/dist/types/src/models/table';
 import { FieldOptions } from '@airtable/blocks/dist/types/src/types/field';
 import map from 'lodash.map';
-import React from 'react';
+import React, { Fragment } from 'react';
 
 export const AirtableFieldOptions = (props: { base: Base, options: FieldOptions }) => {
   const { base, options } = props;
@@ -56,10 +56,10 @@ export const AirtableFieldOptions = (props: { base: Base, options: FieldOptions 
 
                 {map(options?.choices as Array<any>, (choice: any) => {
                   return (
-                    <>
+                    <Fragment key={choice.name}>
                       <li>Name: {choice.name}</li>
                       <li>Color: {choice.color}</li>
-                    </>
+                    </Fragment>
                   );
                 })}
               </ul>
