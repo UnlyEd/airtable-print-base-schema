@@ -111,9 +111,12 @@ const App = () => {
     <TextareaAutosize
       readOnly
       style={{
-        overflow: 'auto',
-        width: '100%',
         border: 'none',
+
+        // Avoid manual resize, take all available width at all times
+        width: '100%',
+        minWidth: '100%',
+        maxWidth: '100%',
       }}
     >
       {turndown.turndown(renderToString(<BaseStructure />))}
